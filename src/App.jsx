@@ -11,6 +11,7 @@ import ForgePassword from "./pages/auth/ForgePassword";
 // Pages admin:
 import Home from './pages/admin/Home';
 import Chat from "./pages/admin/Chat";
+import Profile from "./pages/admin/Profile";
 import Error404 from './pages/Error404';
 
 function App() {
@@ -18,20 +19,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/*
-          Indico una serie de Ruta que contiene un layout, y que siempre quiero
-          que se Cargue este Layout Cuando vaya a la ruta /auth.
-        */}
-        <Route path='/auth' element={<LayoutAuth />}>
-          {/* path="name-ruta" element={<name-component/>} */}
-          <Route index element={<Login />} />
-          <Route path="registro" element={<Register />} />
-          <Route path="olvide-password" element={<ForgePassword />} />
-        </Route>
+        {/* path="name-ruta" element={<name-component/>} */}
+        <Route path="login" element={<Login />} />
+        <Route path="registro" element={<Register />} />
+        <Route path="olvide-password" element={<ForgePassword />} />
 
         {/*
           Indico una serie de Ruta que contiene un layout, y que siempre quiero
-          que se Cargue este Layout, Cuando vaya a la ruta /.
+          que se Cargue este Layout, Cuando vaya a la ruta "/".
         */}
         <Route path="/" element={<LayoutAdmin />}>
           {/* 
@@ -39,6 +34,7 @@ function App() {
           */}
           <Route index element={<Home />} />
           <Route path="chat" element={<Chat />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
         {/* 
